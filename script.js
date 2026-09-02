@@ -26,3 +26,23 @@ function foglal(asztal) {
             "Az " + asztal + ". asztal foglalása feloldva! 🔓";
     }
 }
+
+const params = new URLSearchParams(window.location.search);
+const asztal = params.get("asztal");
+
+if (asztal !== null) {
+
+    let allapot;
+
+    if (foglalasok[asztal - 1]) {
+        allapot = "FOGLALT ❌";
+    } else {
+        allapot = "SZABAD ✅";
+    }
+
+    document.body.innerHTML = `
+        <h1>SMART SCHOOL</h1>
+        <h2>Asztal ${asztal}</h2>
+        <h1>${allapot}</h1>
+    `;
+}
