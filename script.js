@@ -1,4 +1,24 @@
-let foglalasok = [false, false, false, false];
+let foglalasok =
+JSON.parse(localStorage.getItem("foglalasok")) ||
+[false, false, false, false];
+
+// Betöltéskor visszaállítja az állapotokat
+for (let i = 1; i <= 4; i++) {
+
+    let status = document.getElementById("status" + i);
+    let gomb = document.getElementById("gomb" + i);
+
+    if (status && gomb) {
+
+        if (foglalasok[i - 1]) {
+            status.innerHTML = "Állapot: Foglalt ❌";
+            gomb.innerHTML = "Feloldás";
+        } else {
+            status.innerHTML = "Állapot: Szabad ✅";
+            gomb.innerHTML = "Foglalás";
+        }
+    }
+}
 
 function foglal(asztal) {
 
@@ -25,12 +45,18 @@ function foglal(asztal) {
         document.getElementById("uzenet").innerHTML =
             "Az " + asztal + ". asztal foglalása feloldva! 🔓";
     }
+
+    localStorage.setItem(
+        "foglalasok",
+        JSON.stringify(foglalasok)
+    );
 }
 
+// QR-kódos megnyitás kezelése
 const params = new URLSearchParams(window.location.search);
 const asztal = params.get("asztal");
 
-if (asztal !== null) {
+if (asztal) {
 
     let allapot;
 
@@ -41,10 +67,10 @@ if (asztal !== null) {
     }
 
     document.body.innerHTML = `
-        <h1>SMART SCHOOL</h1>
-        <h2>Asztal ${asztal}</h2>
-        <h1>${allapot}</h1>
+        <div style="text-align:center; margin-top:100px; font-family:Arial;">
+            <h1>SMART SCHOOL</h1>
+            <h2>Asztal ${asztal}</h2>
+            <h1>${allapot}</h1>
+        </div>
     `;
 }
-
-alert(window.location.search);
