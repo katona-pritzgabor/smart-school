@@ -22,6 +22,8 @@ for (let i = 1; i <= 4; i++) {
 
 function foglal(asztal) {
 
+    let szabadQR = document.getElementById("szabad" + asztal);
+    let foglaltQR = document.getElementById("foglalt" + asztal);
     let status = document.getElementById("status" + asztal);
     let gomb = document.getElementById("gomb" + asztal);
 
