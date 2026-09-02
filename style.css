@@ -19,6 +19,7 @@ h1 {
 .room {
     background-color: white;
     width: 250px;
+    min-height: 280px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px gray;
@@ -44,7 +45,8 @@ button:hover {
 }
 
 .room img {
-    width: 120px;
-    height: 120px;
-    margin: 10px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 10px auto;
 }
