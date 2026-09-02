@@ -50,3 +50,12 @@ button:hover {
     display: block;
     margin: 10px auto;
 }
+
+/* A foglalt QR-ok induláskor rejtve */
+#foglalt1,
+#foglalt2,
+#foglalt3,
+#foglalt4 {
+    display: none;
+}
+
