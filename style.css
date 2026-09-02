@@ -42,3 +42,13 @@ button:hover {
     color: green;
     margin-top: 20px;
 }
+
+.room img {
+2
+width: 120px;
+3
+height: 120px;
+4
+margin: 10px 0;
+5
+}
