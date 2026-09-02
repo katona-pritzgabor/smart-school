@@ -46,3 +46,5 @@ if (asztal !== null) {
         <h1>${allapot}</h1>
     `;
 }
+
+alert(window.location.search);
