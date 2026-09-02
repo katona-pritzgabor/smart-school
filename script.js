@@ -50,6 +50,13 @@ function foglal(asztal) {
         "foglalasok",
         JSON.stringify(foglalasok)
     );
+
+
+
+    localStorage.setItem(
+    "foglalasok",
+    JSON.stringify(foglalasok)
+    );
 }
 
 // QR-kódos megnyitás kezelése
