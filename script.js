@@ -81,11 +81,13 @@ if (asztal) {
 
     let szoveg;
 
-    if (allapot === "foglalt") {
-        szoveg = "FOGLALT ❌";
-    } else {
-        szoveg = "SZABAD ✅";
-    }
+    alert(allapot);
+
+if (allapot === "foglalt") {
+    szoveg = "FOGLALT ❌";
+} else {
+    szoveg = "SZABAD ✅";
+}
 
     document.body.innerHTML = `
         <div style="text-align:center; margin-top:100px; font-family:Arial;">
