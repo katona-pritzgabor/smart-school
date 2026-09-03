@@ -8,14 +8,24 @@ for (let i = 1; i <= 4; i++) {
     let status = document.getElementById("status" + i);
     let gomb = document.getElementById("gomb" + i);
 
+    let szabadQR = document.getElementById("szabad" + i);
+    let foglaltQR = document.getElementById("foglalt" + i);
+
     if (status && gomb) {
 
         if (foglalasok[i - 1]) {
             status.innerHTML = "Állapot: Foglalt ❌";
             gomb.innerHTML = "Feloldás";
+
+            szabadQR.style.display = "none";
+            foglaltQR.style.display = "block";
+
         } else {
             status.innerHTML = "Állapot: Szabad ✅";
             gomb.innerHTML = "Foglalás";
+
+            szabadQR.style.display = "block";
+            foglaltQR.style.display = "none";
         }
     }
 }
@@ -40,7 +50,9 @@ function foglal(asztal) {
         document.getElementById("uzenet").innerHTML =
             "Az " + asztal + ". asztal sikeresen lefoglalva! ✅";
 
-    } else {
+    } 
+
+    else {
 
         foglalasok[asztal - 1] = false;
 
