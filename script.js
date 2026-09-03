@@ -95,3 +95,5 @@ if (asztal) {
         </div>
     `;
 }
+
+alert("ÚJ SCRIPT BETÖLTVE");
