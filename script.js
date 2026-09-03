@@ -75,22 +75,23 @@ function foglal(asztal) {
 // QR-kódos megnyitás kezelése
 const params = new URLSearchParams(window.location.search);
 const asztal = params.get("asztal");
+const allapot = params.get("allapot");
 
 if (asztal) {
 
-    let allapot;
+    let szoveg;
 
-    if (foglalasok[asztal - 1]) {
-        allapot = "FOGLALT ❌";
+    if (allapot === "foglalt") {
+        szoveg = "FOGLALT ❌";
     } else {
-        allapot = "SZABAD ✅";
+        szoveg = "SZABAD ✅";
     }
 
     document.body.innerHTML = `
         <div style="text-align:center; margin-top:100px; font-family:Arial;">
             <h1>SMART SCHOOL</h1>
             <h2>Asztal ${asztal}</h2>
-            <h1>${allapot}</h1>
+            <h1>${szoveg}</h1>
         </div>
     `;
 }
