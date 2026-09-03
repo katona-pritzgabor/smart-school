@@ -81,13 +81,11 @@ if (asztal) {
 
     let szoveg;
 
-    alert(allapot);
-
-if (allapot === "foglalt") {
-    szoveg = "FOGLALT ❌";
-} else {
-    szoveg = "SZABAD ✅";
-}
+    if (allapot === "foglalt") {
+        szoveg = "FOGLALT ❌";
+    } else {
+        szoveg = "SZABAD ✅";
+    }
 
     document.body.innerHTML = `
         <div style="text-align:center; margin-top:100px; font-family:Arial;">
@@ -97,5 +95,3 @@ if (allapot === "foglalt") {
         </div>
     `;
 }
-
-alert("ÚJ SCRIPT BETÖLTVE");
