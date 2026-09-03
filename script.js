@@ -34,6 +34,9 @@ function foglal(asztal) {
         status.innerHTML = "Állapot: Foglalt ❌";
         gomb.innerHTML = "Feloldás";
 
+        szabadQR.style.display = "none";
+        foglaltQR.style.display = "block";
+
         document.getElementById("uzenet").innerHTML =
             "Az " + asztal + ". asztal sikeresen lefoglalva! ✅";
 
@@ -44,6 +47,9 @@ function foglal(asztal) {
         status.innerHTML = "Állapot: Szabad ✅";
         gomb.innerHTML = "Foglalás";
 
+        szabadQR.style.display = "block";
+        foglaltQR.style.display = "none";
+
         document.getElementById("uzenet").innerHTML =
             "Az " + asztal + ". asztal foglalása feloldva! 🔓";
     }
@@ -51,13 +57,6 @@ function foglal(asztal) {
     localStorage.setItem(
         "foglalasok",
         JSON.stringify(foglalasok)
-    );
-
-
-
-    localStorage.setItem(
-    "foglalasok",
-    JSON.stringify(foglalasok)
     );
 }
 
